@@ -111,7 +111,7 @@ Setup your repository.
 - Click Source Control icon on the left
 - Select Clone Repository
 - https://github.com/vskryabin/typescript-playwright-bdd.git
-- Select folder where project will be located
+- Select a directory where the project will be located
 
 [Option 2] Or, alternatively, in terminal:
 ```bash
