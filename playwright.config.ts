@@ -5,8 +5,8 @@ import { config } from './config';
 const globalUse = {
   actionTimeout: config.timeouts.action,
   navigationTimeout: config.timeouts.navigation,
-  trace: 'on',
   headless: config.browser.headless,
+  trace: 'on',
   screenshot: 'on',
   video: 'on',
   ignoreHTTPSErrors: true,
@@ -20,25 +20,21 @@ const globalUse = {
       `--window-position=${config.browser.position.x},${config.browser.position.y}`,
       `--window-size=${config.browser.viewport.width},${config.browser.viewport.height}`,
     ],
-    ignoreDefaultArgs: ['--disable-extensions'],
+    ignoreDefaultArgs: ['--disable-extensions']
   },
   contextOptions: {
     viewport: config.browser.viewport,
     permissions: ['geolocation'],
     geolocation: { longitude: -122.4194, latitude: 37.7749 },
     locale: 'en-US',
-    timezoneId: 'America/New_York',
-    recordVideo: {  // Explicit: Triggers recording with default dir
-      dir: 'test-results/videos',
-      size: { width: config.browser.viewport.width, height: config.browser.viewport.height },
-    },
-  },
+    timezoneId: 'America/Los_Angeles'
+  }
 };
 
 const browserDevices: Record<string, any> = {
   chromium: devices['Desktop Chrome'],
   firefox: devices['Desktop Firefox'],
-  webkit: devices['Desktop Safari'],
+  webkit: devices['Desktop Safari']
 };
 
 const projects = browserDevices[config.browser.name]
@@ -49,7 +45,7 @@ const projects = browserDevices[config.browser.name]
   : [
       { name: 'chromium', use: { ...globalUse, ...devices['Desktop Chrome'] } },
       { name: 'firefox', use: { ...globalUse, ...devices['Desktop Firefox'] } },
-      { name: 'webkit', use: { ...globalUse, ...devices['Desktop Safari'] } },
+      { name: 'webkit', use: { ...globalUse, ...devices['Desktop Safari'] } }
     ];
 
 export default defineConfig({
@@ -66,7 +62,7 @@ export default defineConfig({
   reporter: [
     ['html', { outputFolder: 'test-reports', open: 'never' }],
     ['json', { outputFile: 'test-reports/index.json' }],
-    ['junit', { outputFile: 'test-reports/junit.xml' }],
+    ['junit', { outputFile: 'test-reports/junit.xml' }]
   ],
-  projects,
+  projects
 });
