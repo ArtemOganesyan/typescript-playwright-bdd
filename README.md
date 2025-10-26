@@ -110,7 +110,7 @@ cd typescript-playwright-bdd
 
 Or in VSCode directly:
 ```bash
-Click SourceControl icon on the left
+Click Source Control icon on the left
 Select Clone Repository
 https://github.com/vskryabin/typescript-playwright-bdd.git
 Select folder where project will be located
