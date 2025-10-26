@@ -21,7 +21,6 @@ This project is a robust end-to-end test automation framework using:
 
 After installing, open VSCode and install the official Playwright Test for VSCode extension:
 
-
 - Go to the Settings -> Extensions tab (or press Ctrl+Shift+X / Cmd+Shift+X)
 - Search for: Playwright Test for VSCode
 - Publisher: Microsoft microsoft.com (Run Playwright Test tests in Visual Studio Code.)
