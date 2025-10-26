@@ -1,5 +1,5 @@
 @bdd
-Feature: Google search
+Feature: Search
 
   @bdd1
   Scenario: Ecosia search
@@ -10,4 +10,4 @@ Feature: Google search
     Then I wait for any element using css "p[data-test-id='web-result-description']" to be visible
     Then I should see element using css "#main" inner text contains "Cucumber"
 
-  
+
