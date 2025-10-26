@@ -106,14 +106,14 @@ brew install git
 
 Setup your repository.
 
-[Option 1] In VSCode directly:
+#### [Option 1] In VSCode directly:
 
 - Click Source Control icon on the left
 - Select Clone Repository
 - https://github.com/vskryabin/typescript-playwright-bdd.git
 - Select a directory where the project will be located
 
-[Option 2] Or, alternatively, in terminal:
+#### [Option 2] Or, alternatively, in terminal:
 ```bash
 cd your-projects-directory
 ```
