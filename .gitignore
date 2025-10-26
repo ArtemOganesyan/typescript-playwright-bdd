@@ -139,4 +139,5 @@ dist
 
 # Test results
 test-results/
+test-results/.last-run.json
 test-reports/
