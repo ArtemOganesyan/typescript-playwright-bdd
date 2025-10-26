@@ -41,15 +41,17 @@ Also install the official Cucumber extension:
 ##### 🪟 Windows
 
 Go to the official [Node.js](https://nodejs.org/en/download) download page.
-```
-Download the latest LTS version.
-Run the installer.
-Leave default settings checked (includes npm).
-Follow the prompts to complete installation.
-```
+
+- Download the latest LTS version.
+- Run the installer.
+- Leave default settings checked (includes npm).
+- Follow the prompts to complete installation.
+
 Verify installation:
 ```bash
 node -v
+```
+```bash
 npm -v
 ```
 
@@ -68,6 +70,8 @@ brew install node
 Verify installation:
 ```bash
 node -v
+```
+```bash
 npm -v
 ```
 
@@ -76,11 +80,10 @@ npm -v
 ##### 🪟 Windows
 
 Go to the [Git](https://git-scm.com/downloads) downloads page.
-```
-Download and run the installer.
-Choose default options unless you have specific needs.
-```
-After installation, open a new terminal (Command Prompt or Git Bash) and verify:
+
+- Download and run the installer.
+- Choose default options unless you have specific needs.
+- After installation, open a new terminal (Command Prompt or Git Bash) and verify:
 
 ```bash
 git --version
@@ -99,25 +102,28 @@ brew install git
 ```
 
 ### 2. Clone the Repo
-```
+
 Open Terminal and create a directory for projects if not exists. (mkdir your-projects-directory)
-```
+
 Then setup your repository:
 
 In terminal:
 ```bash
 cd your-projects-directory
+```
+```bash
 git clone https://github.com/vskryabin/typescript-playwright-bdd.git
+```
+```bash
 cd typescript-playwright-bdd
 ```
 
 Or in VSCode directly:
-```bash
-Click Source Control icon on the left
-Select Clone Repository
-https://github.com/vskryabin/typescript-playwright-bdd.git
-Select folder where project will be located
-```
+
+- Click Source Control icon on the left
+- Select Clone Repository
+- https://github.com/vskryabin/typescript-playwright-bdd.git
+- Select folder where project will be located
 
 ### 3. Install Dependencies
 
@@ -140,9 +146,17 @@ npm run bdd -- '@tag'
 Playwright tests:
 ```bash
 npx playwright test
+```
+```bash
 npx playwright test tests/test.spec.ts
+```
+```bash
 npx playwright test -g 'partial test name'
+```
+```bash
 npx playwright test -g 'partial test name' -g 'another partial test name'
+```
+```bash
 npx playwright test --grep-invert 'excluded partial name'
 ```
 
@@ -157,6 +171,5 @@ npx playwright codegen
 ```
 
 More:
-```bash
-https://playwright.dev/docs/test-cli
-```
+
+- https://playwright.dev/docs/test-cli
