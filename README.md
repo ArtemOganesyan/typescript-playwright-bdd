@@ -40,7 +40,7 @@ Also install the official Cucumber extension:
 
 ##### 🪟 Windows
 
-Go to the official [Node.js](https://nodejs.org/en/download) download page.
+Go to the official [Node.js](https://nodejs.org/en/download) download page:
 
 - Download the latest LTS version.
 - Run the installer.
@@ -79,7 +79,7 @@ npm -v
 
 ##### 🪟 Windows
 
-Go to the [Git](https://git-scm.com/downloads) downloads page.
+Go to the [Git](https://git-scm.com/downloads) downloads page:
 
 - Download and run the installer.
 - Choose default options unless you have specific needs.
@@ -103,9 +103,8 @@ brew install git
 
 ### 2. Clone the Repo
 
-Open Terminal and create a directory for projects if not exists. (mkdir your-projects-directory)
 
-Then setup your repository:
+Setup your repository.
 
 In terminal:
 ```bash
@@ -118,7 +117,7 @@ git clone https://github.com/vskryabin/typescript-playwright-bdd.git
 cd typescript-playwright-bdd
 ```
 
-Or in VSCode directly:
+Or, alternatively, in VSCode directly:
 
 - Click Source Control icon on the left
 - Select Clone Repository
@@ -172,4 +171,4 @@ npx playwright codegen
 
 More:
 
-- https://playwright.dev/docs/test-cli
+- [Playwright Documentation](https://playwright.dev/docs/test-cli)
