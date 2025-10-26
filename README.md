@@ -138,7 +138,7 @@ npx playwright install
 
 BDD Playwright tests:
 ```bash
-npm run bdd -- '@tag'
+npm run bdd -- '@bdd1'
 ```
 
 Playwright tests:
