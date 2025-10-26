@@ -2,6 +2,24 @@ console.log('Loading playwright.config.ts...');
 import { defineConfig, devices } from '@playwright/test';
 import { config } from './config';
 
+const getLaunchOptions = (browserName: string) => {
+  const baseArgs = [
+    '--disable-web-security',
+    '--disable-gpu',
+    '--no-sandbox',
+    '--disable-setuid-sandbox'
+  ];
+  const windowArgs = (browserName === 'firefox' && !config.browser.headless) ? [] : [
+    `--window-position=${config.browser.position.x},${config.browser.position.y}`,
+    `--window-size=${config.browser.viewport.width},${config.browser.viewport.height}`
+  ];
+  return {
+    slowMo: config.browser.slowMo,
+    args: [...baseArgs, ...windowArgs],
+    ignoreDefaultArgs: ['--disable-extensions']
+  };
+};
+
 const globalUse = {
   actionTimeout: config.timeouts.action,
   navigationTimeout: config.timeouts.navigation,
@@ -10,18 +28,6 @@ const globalUse = {
   screenshot: 'on',
   video: 'on',
   ignoreHTTPSErrors: true,
-  launchOptions: {
-    slowMo: config.browser.slowMo,
-    args: [
-      '--disable-web-security',
-      '--disable-gpu',
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      `--window-position=${config.browser.position.x},${config.browser.position.y}`,
-      `--window-size=${config.browser.viewport.width},${config.browser.viewport.height}`,
-    ],
-    ignoreDefaultArgs: ['--disable-extensions']
-  },
   contextOptions: {
     viewport: config.browser.viewport,
     permissions: ['geolocation'],
@@ -40,12 +46,37 @@ const browserDevices: Record<string, any> = {
 const projects = browserDevices[config.browser.name]
   ? [{ 
       name: config.browser.name, 
-      use: { ...globalUse, ...browserDevices[config.browser.name] } 
+      use: { 
+        ...globalUse, 
+        launchOptions: getLaunchOptions(config.browser.name), 
+        ...browserDevices[config.browser.name] 
+      } 
     }]
   : [
-      { name: 'chromium', use: { ...globalUse, ...devices['Desktop Chrome'] } },
-      { name: 'firefox', use: { ...globalUse, ...devices['Desktop Firefox'] } },
-      { name: 'webkit', use: { ...globalUse, ...devices['Desktop Safari'] } }
+      { 
+        name: 'chromium', 
+        use: { 
+          ...globalUse, 
+          launchOptions: getLaunchOptions('chromium'), 
+          ...devices['Desktop Chrome'] 
+        } 
+      },
+      { 
+        name: 'firefox', 
+        use: { 
+          ...globalUse, 
+          launchOptions: getLaunchOptions('firefox'), 
+          ...devices['Desktop Firefox'] 
+        } 
+      },
+      { 
+        name: 'webkit', 
+        use: { 
+          ...globalUse, 
+          launchOptions: getLaunchOptions('webkit'), 
+          ...devices['Desktop Safari'] 
+        } 
+      }
     ];
 
 export default defineConfig({
