@@ -133,9 +133,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Local artifacts
 .DS_Store
 package-lock.json
-test-results/index.html
-test-results/index.json
-test-results/report.html
-test-results/report.json
+
+# Test results
+test-results/
+test-reports/
