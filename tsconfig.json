@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ESNext",
+    "module": "commonjs",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -11,11 +11,13 @@
     "strictPropertyInitialization": true,
     "useDefineForClassFields": true,
     "skipLibCheck": true,
+    "sourceMap": true,
+    "types": ["node", "playwright"],
+    "allowJs": true,
     "outDir": "dist",
     "rootDir": ".",
-    "baseUrl": ".",
-    "types": ["node", "playwright"],
-    "sourceMap": true
+    "baseUrl": "."
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
