@@ -3,12 +3,20 @@ import { defineConfig, devices } from '@playwright/test';
 import { config } from './config';
 
 const getLaunchOptions = (browserName: string) => {
-  const baseArgs = [
-    '--disable-web-security',
-    '--disable-gpu',
-    '--no-sandbox',
-    '--disable-setuid-sandbox'
-  ];
+  let baseArgs: string[] = [];
+  if (browserName === 'chromium') {
+    baseArgs = [
+      '--disable-web-security',
+      '--disable-gpu',
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
+    ];
+  } else if (browserName === 'firefox') {
+    baseArgs = [
+      '--disable-web-security'
+    ];
+  }
+
   const windowArgs = (browserName === 'firefox' && !config.browser.headless) ? [] : [
     `--window-position=${config.browser.position.x},${config.browser.position.y}`,
     `--window-size=${config.browser.viewport.width},${config.browser.viewport.height}`
