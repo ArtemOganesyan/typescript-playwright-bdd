@@ -147,7 +147,7 @@ Set-ExecutionPolicy RemoteSigned
 ```bash
 Get-ExecutionPolicy
 ```
-Then in VSCode, open Terminam and run:
+Then in VSCode, open Terminal and run:
 ```bash
 npm install
 ```
