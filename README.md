@@ -195,7 +195,7 @@ npx playwright show-report test-reports
 
 ### More
 
-- Codegen:
+Codegen:
 ```bash
 npx playwright codegen
 ```
