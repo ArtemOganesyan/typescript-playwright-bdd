@@ -132,6 +132,10 @@ In VSCode, open Terminal and run:
 ```bash
 npm install
 ```
+Install Plawright browsers:
+```bash
+npx playwright install
+```
 
 #### 🪟 Windows
 - Open Powershell as Admin (Run as Administrator)
@@ -151,18 +155,21 @@ Then in VSCode, open Terminal and run:
 ```bash
 npm install
 ```
-
-### 4. Running tests
-
 Install Plawright browsers:
 ```bash
 npx playwright install
 ```
 
+### 4.1 Running BDD tests
+
 BDD Playwright tests:
 ```bash
 npm run bdd -- '@bdd1'
 ```
+
+
+
+### 4.2 Running Playwright tests
 
 Playwright tests:
 ```bash
@@ -186,11 +193,11 @@ Playwright report:
 npx playwright show-report test-reports
 ```
 
-Codegen:
+### More
+
+- Codegen:
 ```bash
 npx playwright codegen
 ```
-
-More:
 
 - [Playwright Documentation](https://playwright.dev/docs/test-cli)
