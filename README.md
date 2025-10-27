@@ -125,8 +125,26 @@ cd typescript-playwright-bdd
 
 ### 3. Install Dependencies
 
+
+#### 🍎 macOS
+
+In VSCode, open Termianl
 ```bash
 npm install
+```
+##### 🪟 Windows
+- Open Powershell as Admin (Run as Administrator)
+- Check current execution policy
+```bash
+Get-ExecutionPolicy
+```
+- If Restricted, change to RemoteSigned
+```bash
+Set-ExecutionPolicy RemoteSigned
+```
+- Validate that changed
+```bash
+Get-ExecutionPolicy
 ```
 
 ### 4. Running tests
